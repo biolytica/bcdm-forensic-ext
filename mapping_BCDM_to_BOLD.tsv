@@ -1,0 +1,89 @@
+bcdm_field	bold_field	bold_field_type	sub_table_field	constraint	policy	sub_field_type
+bin_created_date	barcodecluster.created	timestamp without time zone				
+bin_uri	barcodecluster.uri	character varying(16) 				
+province/state	location.fk_geopol	integer 	geopol.name	geopol.rank='province'	append	character varying(50) 
+region	locatdesc.region	character varying(200)				
+sector	locatdesc.sector	character varying(200)				
+site	locatdesc.site	character varying(200)				
+coord	location.coord	point 				
+depth	location.depth	real 				
+depth_accuracy	location.depth_accuracy	real 				
+elev	location.elev	real 				
+elev_accuracy	location.elev_accuracy	real 				
+country/ocean	location.fk_geopol	integer 	geopol.name	geopol.rank='country'	lookup	character varying(50) 
+country_iso	location.fk_geopol	integer 	geopol.iso3	geopol.rank='country'	lookup	character varying(8) 
+geoid	location.fk_geopol	integer 	geopol.id			
+coord_accuracy	location.gps_accuracy	real 				
+coord_source	location.gps_source	character varying(100) 				
+marker_code	marker.code	character varying(20) 				
+primers_forward	pcr.fk_primer_f	integer 	primer.code || ':' || primer.nuc		lookup:primer.id	character varying (124)
+primers_reverse	pcr.fk_primer_r	integer 	primer.code || ':' || primer.nuc		lookup:primer.id	character varying (124)
+sequence_run_site	seqdata.fk_site	integer 	inst.name		lookup:inst.id	character varying (300)
+insdc_acs	seqdata.gb_asc	character varying(32) 				
+nuc	seqdata.nucraw	character varying(10000)				
+sequence_upload_date	seqdata.updated	timestamp without time zone				
+processid	seqentry.processid	character varying(15) 				
+inst	specimen.fk_inst	integer 	inst.name		lookup:inst.id	character varying (300)
+museumid	specimen.catalognumber	character varying(68) 				
+collection_code	specimen.collectioncode	character varying(35) 				
+processid_minted_date	specimen.created	timestamp without time zone				
+short_note	specimen.extrainfo	character varying(50) 				
+class	specimen.fk_tax	integer 	tax_denorm_mat.class	tax.rank='class'	lookup	character varying(80)
+family	specimen.fk_tax	integer 	tax_denorm_mat.family		lookup	character varying(80)
+genus	specimen.fk_tax	integer 	tax_denorm_mat.genus		lookup	character varying(80)
+order	specimen.fk_tax	integer 	tax_denorm_mat.order		lookup	character varying(80)
+phylum	specimen.fk_tax	integer 	tax_denorm_mat.phylum		lookup	character varying(80)
+specimenid	specimen.id	integer 				
+identification_method	specimen.identification_method	character varying(256) 				
+fieldid	specimen.isolate	character varying(68) 				
+sampleid	specimen.sampleid	character varying(68) 				
+taxid	specimen.fk_tax	integer 	tax_denorm_mat.taxid			
+collection_notes	specimendetails.fk_collectionnote	integer 	notes.note		overwrite	text
+identified_by	specimendetails.identified_by	character varying(128) 				
+notes	specimendetails.fk_notes	integer 	notes.note		overwrite	text
+taxonomy_notes	specimendetails.fk_taxnotes	integer 	notes.note		overwrite	text
+associated_specimens	specimendetails.associated_specimens	character varying(1024) 				
+associated_taxa	specimendetails.associated_taxa	character varying(1024) 				
+biobank_accessioning_date	specimendetails.biobank_accessioning_date	date 				
+biobank_catalog_number	specimendetails.biobank_catalog_number	character varying(128) 				
+coc_start_coord	specimendetails.coc_start_coord	point 				
+collection_event_id	specimendetails.collection_event_id	character varying(128) 				
+collection_date_start	specimendetails.collectiondate	date 				
+collection_date_accuracy	specimendetails.collectiondate_precision	integer 				
+collection_time	specimendetails.collectiontime	character varying(64) 				
+collector_email	specimendetails.collector_email	character varying(64) 				
+collector_id	specimendetails.collector_id	character varying(64) 				
+collector_phone	specimendetails.collector_phone	character varying(64) 				
+collectors	specimendetails.collectors	character varying(150) 				
+confidence_of_identification	specimendetails.confidence_of_identification	character varying(64) 				
+field_provisional_name	specimendetails.field_provisional_name	character varying(64) 				
+biobank_institution	specimendetails.fk_biobank_institution	integer 	inst.name		lookup	character varying (300)
+collector_affiliation	specimendetails.fk_collector_affiliation	integer 	inst.name		lookup	character varying (300)
+funding_src	specimendetails.fundingsrc	character varying(64) 				
+habitat	specimendetails.habitat	character varying(256) 				
+life_stage	specimendetails.lifestage	character varying(128) 				
+specimen_linkout	specimendetails.linkout	character varying(256) 				
+method_of_delivery	specimendetails.method_of_delivery	character varying(64) 				
+microsatellite_genotype	specimendetails.microsatellite_genotype	jsonb 				
+reference_grade	specimendetails.reference_grade	character varying(64) 				
+reproduction	specimendetails.reproduction	character(1) 				
+sample_collection_kit_id	specimendetails.sample_collection_kit_id	character varying(64) 				
+sampling_protocol	specimendetails.sampling_protocol	character varying(128) 				
+saps_sample_reference_id	specimendetails.saps_sample_reference_id	character varying(64) 				
+sealed_bag_contents	specimendetails.sealed_bag_contents	character varying(64)[] 				
+sealed_bag_ids	specimendetails.sealed_bag_ids	character varying(64)[] 				
+sex	specimendetails.sex	character(1) 				
+site_code	specimendetails.sitecode	character varying(128) 				
+specimen_height_cm	specimendetails.specimen_height_cm	integer 				
+specimen_length_cm	specimendetails.specimen_length_cm	integer 				
+specimen_tag_id	specimendetails.specimen_tag_id	character varying(64)[] 				
+specimen_tag_type	specimendetails.specimen_tag_type	character varying(64)[] 				
+specimen_weight_g	specimendetails.specimen_weight_g	integer 				
+tissue_type	specimendetails.tissuetype	character varying(100) 				
+voucher_type	specimendetails.vouchertype	character varying(100) 				
+kingdom	specimen.fk_tax	integer 				
+species	specimen.fk_tax	integer 	tax_denorm_mat.species			
+subfamily	specimen.fk_tax	integer 	tax_denorm_mat.subfamily			
+subspecies	specimen.fk_tax	integer 	tax_denorm_mat.subspecies			
+tribe	specimen.fk_tax	integer 	tax_denorm_mat.tribe			
+identification	specimen.fk_tax	integer 	tax.taxon			

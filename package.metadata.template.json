@@ -1,0 +1,426 @@
+{
+    "id": "<UNSPECIFIED ID",
+    "name": "<UNSPECIFIED NAME>",
+    "title": "<UNSPECIFIED TITLE>",
+    "description": "<UNSPECIFIED DESCRIPTICTON",
+    "contributors": [
+        {
+            "title": "<TITLE OF FIRST CONTRIBUTOR>",
+            "role": "<ROLE OF CONTRIBUTOR>"
+        }
+    ],
+    "version": "1.0.0",
+    "licenses": [
+        {
+            "name": "CC-BY-SA-4.0",
+            "title": "Creative Commons Attribution Share-Alike 4.0",
+            "path": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+    ],
+    "profile": "data-package",
+    "resources": [
+        {
+            "name": "<DATA PACKAGE NAME>",
+            "path": "<DATA FILE NAME>",
+            "hash": "<MD5 HASH OF DATA FILE HERE>",
+            "profile": "tabular-data-resource",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "processid",
+                        "title": "process ID",
+                        "type": "string",
+                        "format": "default",
+                        "description": "BOLD System generated unique identifier for the sample being sequenced."
+                    },
+                    {
+                        "name": "sampleid",
+                        "title": "sample ID",
+                        "type": "string",
+                        "format": "default",
+                        "description": "User generated identifier for the sample being sequenced, often identical to the Field ID or Museum ID."
+                    },
+                    {
+                        "name": "gb_acs",
+                        "title": "genbank accession",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Genbank accession number."
+                    },
+                    {
+                        "name": "specimenid",
+                        "title": "specimen ID",
+                        "type": "integer",
+                        "format": "default",
+                        "description": "BOLD System generated numerical ID associated with the specimen record."
+                    },
+                    {
+                        "name": "museumid",
+                        "title": "museum ID",
+                        "type": "integer",
+                        "format": "default",
+                        "description": "Catalog number from a museum collection."
+                    },
+                    {
+                        "name": "fieldid",
+                        "title": "field ID",
+                        "type": "integer",
+                        "format": "default",
+                        "description": "Specimen or sample identifier generated in the field or lot number for a bulk collection event."
+                    },
+                    {
+                        "name": "bin_uri",
+                        "title": "BIN URI",
+                        "type": "string",
+                        "format": "uri",
+                        "description": "The Barcode Index Number (BIN) assinged to the the COI sequence."
+                    },
+                    {
+                        "name": "inst",
+                        "title": "depository",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Institution storing the physical specimen."
+                    },
+                    {
+                        "name": "processid_minted_date",
+                        "title": "processID minted date",
+                        "type": "date",
+                        "format": "%d-%b-%Y",
+                        "description": "Date of record registration on BOLD."
+                    },
+                    {
+                        "name": "identification",
+                        "title": "identification",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Taxonomic identification of the specimen."
+                    },
+                    {
+                        "name": "identification_rank",
+                        "title": "identification_rank",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Taxonomic rank of the identification associated with the specimen."
+                    },
+                    {
+                        "name": "kingdom",
+                        "title": "kingdom",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Taxonomy: Kingdom."
+                    },
+                    {
+                        "name": "phylum",
+                        "title": "phylum",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Taxonomy: Phylum."
+                    },
+                    {
+                        "name": "class",
+                        "title": "class",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Taxonomy: Class."
+                    },
+                    {
+                        "name": "order",
+                        "title": "order",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Taxonomy: Order."
+                    },
+                    {
+                        "name": "family",
+                        "title": "family",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Taxonomy: Family."
+                    },
+                    {
+                        "name": "subfamily",
+                        "title": "subfamily",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Taxonomy: Subfamily."
+                    },
+                    {
+                        "name": "genus",
+                        "title": "genus",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Taxonomy: Genus."
+                    },
+                    {
+                        "name": "species",
+                        "title": "species",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Taxonomy: Species."
+                    },
+                    {
+                        "name": "subspecies",
+                        "title": "subspecies",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Taxonomy: Subspecies."
+                    },
+                    {
+                        "name": "species_reference",
+                        "title": "species reference",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Reference for species name."
+                    },
+                    {
+                        "name": "identification_method",
+                        "title": "identification method",
+                        "type": "string",
+                        "format": "default",
+                        "description": "The method used to identify the specimen."
+                    },
+                    {
+                        "name": "identified_by",
+                        "title": "identified_by",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Full name of primary individual responsible for providing the taxonomic identification of the specimen."
+                    },
+                    {
+                        "name": "collectors",
+                        "title": "collectors",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Comma separated list of full or abbreviated names of the individuals or teams responsible for collecting the sample in the field."
+                    },
+                    {
+                        "name": "collection_date",
+                        "title": "collection date",
+                        "type": "date",
+                        "format": "%d-%b-%Y",
+                        "description": "Date the sample was collected."
+                    },
+                    {
+                        "name": "collection_date_accuracy",
+                        "title": "collection date accuracy",
+                        "type": "integer",
+                        "format": "default",
+                        "description": "A numerical representation of the precision of the collection date given in days and is represented as +/- the collection date value. Default is 0 days."
+                    },
+                    {
+                        "name": "collection_time",
+                        "title": "collection time",
+                        "type": "string",
+                        "format": "default",
+                        "description": "The time or time of day during which the sample was collected."
+                    },
+                    {
+                        "name": "collection_note",
+                        "title": "collection note",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Comments or notes about the collection event."
+                    },
+                    {
+                        "name": "country",
+                        "title": "country",
+                        "type": "string",
+                        "format": "default",
+                        "description": "The full, unabbreviated name of the country, major political unit, or ocean."
+                    },
+                    {
+                        "name": "country_iso",
+                        "title": "country ISO",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Country ISO 3166-1 Alpha-2 code."
+                    },
+                    {
+                        "name": "province",
+                        "title": "province/state",
+                        "type": "string",
+                        "format": "default",
+                        "description": "The full, unabbreviated name of the state, province, territory, or prefecture within the given country."
+                    },
+                    {
+                        "name": "region",
+                        "title": "region",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Park, county, district, lake or river."
+                    },
+                    {
+                        "name": "sector",
+                        "title": "sector",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Sector of park or county/city."
+                    },
+                    {
+                        "name": "site",
+                        "title": "site",
+                        "type": "string",
+                        "format": "default",
+                        "description": "The name of the sampling location."
+                    },
+                    {
+                        "name": "coord",
+                        "title": "GPS coordinate",
+                        "type": "geopoint",
+                        "format": "default",
+                        "description": "Latitude & Longitude in 'degrees.decimal degrees' format (e.g. 45.837)."
+                    },
+                    {
+                        "name": "coord_accuracy",
+                        "title": "GPS coordinate accuracy",
+                        "type": "number",
+                        "format": "default",
+                        "description": "Accuracy of coordinate in degrees.decimal degrees."
+                    },
+                    {
+                        "name": "coord_source",
+                        "title": "GPS coordinate source",
+                        "type": "string",
+                        "format": "default",
+                        "description": "The source of the coordinates."
+                    },
+                    {
+                        "name": "depth",
+                        "title": "depth",
+                        "type": "string",
+                        "format": "default",
+                        "description": "For organisms collected beneath the surface of a water body. Measured in meters below surface of water."
+                    },
+                    {
+                        "name": "depth_accuracy",
+                        "title": "depth accuracy",
+                        "type": "number",
+                        "format": "default",
+                        "description": "The accurancy of the depth value in meters."
+                    },
+                    {
+                        "name": "elev",
+                        "title": "elevation",
+                        "type": "number",
+                        "format": "default",
+                        "description": "Elevation of sampling site. Measured in meters relative to sea level. Negative values indicate a position below sea level."
+                    },
+                    {
+                        "name": "elev_accuracy",
+                        "title": "elevation accuracy",
+                        "type": "number",
+                        "format": "default",
+                        "description": "Accuracy of the elevation value in meters."
+                    },
+                    {
+                        "name": "sex",
+                        "title": "sex",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Male/female/hermaphrodite only."
+                    },
+                    {
+                        "name": "reproduction",
+                        "title": "reproduction",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Sexual/asexual/cyclic parthenogen only."
+                    },
+                    {
+                        "name": "life_stage",
+                        "title": "life stage",
+                        "type": "string",
+                        "format": "default",
+                        "description": "The age class or life stage of the specimen(s) at the time of sampling. The field supports free text but is a controlled vocabulary for validation. Example: 'Adult', 'Immature', 'pupa', etc."
+                    },
+                    {
+                        "name": "habitat",
+                        "title": "habitat",
+                        "type": "string",
+                        "format": "default",
+                        "description": "A category or description of the habitat."
+                    },
+                    {
+                        "name": "extrainfo",
+                        "title": "extra info",
+                        "type": "string",
+                        "format": "default",
+                        "description": "A brief note or project term associated with the specimen for rapid analysis."
+                    },
+                    {
+                        "name": "notes",
+                        "title": "notes",
+                        "type": "string",
+                        "format": "default",
+                        "description": "General notes regarding the specimen."
+                    },
+                    {
+                        "name": "voucher_type",
+                        "title": "voucher type",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Status of the specimen in an accessioning process. Controlled vocabulary: - 'Museum Vouchered:Type' - 'Museum Vouchered:Type Series' - 'Vouchered:Registered Collection' - 'To Be Vouchered:Holdup/Private' - 'E-Vouchered:DNA/Tissue+Photo' - 'Dna/Tissue Vouchered Only' - 'No Specimen'."
+                    },
+                    {
+                        "name": "associated_specimen",
+                        "title": "associated specimen",
+                        "type": "string",
+                        "format": "default",
+                        "description": "A list (concatenated and comma separated) of other specimens associated with the subject specimen at the time of its collection. References to other specimen identifiers should be preceded by the relationship. Examples: 'host: PLANT23452, prey: USNM45677' when both prey and host specimens have been captured."
+                    },
+                    {
+                        "name": "associated_taxa",
+                        "title": "associated taxa",
+                        "type": "string",
+                        "format": "default",
+                        "description": "A list (concatenated and separated) of taxa associated with the taxon at the time of its collection. References to other taxa should be preceded by the relationship. Use of this field implies knowledge of an associated specimen where the identification is an inference. Use of the associated Specimen(below) field is preferred when the associated specimen is databased. Examples: [host: Quercus alba], [prey: caterpillar]."
+                    },
+                    {
+                        "name": "nucraw",
+                        "title": "raw nucleotide sequence",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Nucleotide sequence as submitted by the user."
+                    },
+                    {
+                        "name": "sequence_upload_date",
+                        "title": "sequence upload date",
+                        "type": "date",
+                        "format": "%d-%b-%Y",
+                        "description": "Date the sequence was uploaded to BOLD."
+                    },
+                    {
+                        "name": "sequence_run_site",
+                        "title": "sequence run site",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Full name of the institution where sequencing was performed or the database the sequence was retrieved from."
+                    },
+                    {
+                        "name": "marker_code",
+                        "title": "marker code",
+                        "type": "string",
+                        "format": "default",
+                        "description": "The marker code for a record corresponding to this record's nucraw. Note that a sample can be sequenced with multiple markers, which result in multiple records with the same processid. Finding a given specific unique record will require a (processid, marker_code) pair."
+                    },
+                    {
+                        "name": "recordset_code_arr",
+                        "title": "recordsets",
+                        "type": "string",
+                        "format": "default",
+                        "description": "A list (comma separated) of Projects and Datasets that this record is assocaited with."
+                    },
+                    {
+                        "name": "funding_src",
+                        "title": "funding source",
+                        "type": "string",
+                        "format": "default",
+                        "description": "Funding source where provided."
+                    }
+                ]
+            }
+        }
+        
+    ]
+}
