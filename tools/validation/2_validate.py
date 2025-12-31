@@ -14,7 +14,7 @@ def read_control_vocab_file (file):
     return data
         
 def read_geo_registry_file (file):
-    rank_to_bcdm_mapping = {'country': 'country/ocean', 'province': 'province/state'}
+    rank_to_bcdm_mapping = {'country': 'country/ocean', 'province': 'province/state'}   # registry rank spelling vs bcdm fieldname
     df = pd.read_csv(file, sep='\t')    #id	rank	entity	country	country_iso	country_iso3	province
     data = { rank: dict (zip (subdf['entity'], subdf['id'])) for rank, subdf in df.groupby('rank')}
     
@@ -22,13 +22,9 @@ def read_geo_registry_file (file):
     return {rank_to_bcdm_mapping.get(key_lookup, key_lookup): v for key_lookup, v in data.items()}
 
 def read_tax_registry_file (file):
-    #rank_to_bcdm_mapping = {'country': 'country/ocean', 'province': 'province/state'}
     df = pd.read_csv(file, sep='\t')
-    #id	rank	entity	country	country_iso	country_iso3	province
     data = { rank: dict (zip (subdf['taxon'], subdf['taxid'])) for rank, subdf in df.groupby('tax_rank')}
-    
-    # rename rank to corresponding bcdm field if found in rank_to_bcdm_mapping
-    return data # {rank_to_bcdm_mapping.get(key_lookup, key_lookup): v for key_lookup, v in data.items()}
+    return data 
 
     
 #TODO: test tax & geo.  
@@ -111,9 +107,9 @@ if __name__ == "__main__":
         description="""This tool takes a data JSONL in valid submission package format and checks if submitted data conforms to BCDM data types.  If all-or-nothing flag is not set, 
         only the valid submission objects will be written to stdout.  All error messages should be captured in stderr.  
 
-Usage: cat data_bcdm.jsonl | python 2_validate.py --ctrl-vocab /path/controlled_vocab.tsv --rules /path/validation_rule_set.tsv --atomicity all-or-nothing > /file/path/filtered.jsonl 2> /file/path/err.log;"
+Usage: cat data_bcdm.jsonl | python 2_validate.py --ctrl-vocab /path/controlled_vocab.tsv --tax $bcdm/controlled_vocabulary_taxonomy.tsv --geo $bcdm/controlled_vocabulary_geopol.tsv --atomicity all-or-nothing > /file/path/filtered.jsonl 2> /file/path/err.log;"
 """)
-    parser.add_argument("--batch-size", type=int, required=False, help="If set, the all-or-nothing applies to each batch.  Alternatively, all records submitted will be validated in single batch.")
+    #parser.add_argument("--batch-size", type=int, required=False, help="If set, the all-or-nothing applies to each batch.  Alternatively, all records submitted will be validated in single batch.")
     parser.add_argument("--atomicity", type = str, required=False, choices = ["all-or-nothing", "any"], default="all-or-nothing", help="any means that records are checks invididually; all-or-nothing means that all records must be valid to be accepted")
     parser.add_argument("--mode", type = str, required=False, choices = ["warning", "filter"], default="filter", help="If filter is specified, invalid term will be removed from the submission object")
     parser.add_argument("--ctrl-vocab", type=str, required=True, help="Path to the control vocab file.")
@@ -125,7 +121,7 @@ Usage: cat data_bcdm.jsonl | python 2_validate.py --ctrl-vocab /path/controlled_
     args = parser.parse_args()
 
     # Enforce dependency
-    if args.batch_size is not None and not args.all_or_nothing:
-        parser.error("--batch-size requires --all-or-nothing")
+    #if args.batch_size is not None and not args.atomicity == 'all-or-nothing':
+    #    parser.error("--batch-size requires --atomicity all-or-nothing")
 
     main(args)

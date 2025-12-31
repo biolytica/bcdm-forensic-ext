@@ -82,8 +82,9 @@ specimen_weight_g	specimendetails.specimen_weight_g	integer
 tissue_type	specimendetails.tissuetype	character varying(100) 				
 voucher_type	specimendetails.vouchertype	character varying(100) 				
 kingdom	specimen.fk_tax	integer 				
-species	specimen.fk_tax	integer 	tax_denorm_mat.species			
-subfamily	specimen.fk_tax	integer 	tax_denorm_mat.subfamily			
-subspecies	specimen.fk_tax	integer 	tax_denorm_mat.subspecies			
-tribe	specimen.fk_tax	integer 	tax_denorm_mat.tribe			
-identification	specimen.fk_tax	integer 	tax.taxon			
+species	specimen.fk_tax	integer 	tax_denorm_mat.species		lookup	character varying(80)
+subfamily	specimen.fk_tax	integer 	tax_denorm_mat.subfamily		lookup	character varying(80)
+subspecies	specimen.fk_tax	integer 	tax_denorm_mat.subspecies		lookup	character varying(80)
+tribe	specimen.fk_tax	integer 	tax_denorm_mat.tribe		lookup	character varying(80)
+identification	specimen.fk_tax	integer 	tax.taxon		
+bold_recordset_code_arr	project_seq.fk_project	integer	project.code	type='data'	lookup	character varying (8)
