@@ -41,7 +41,7 @@ tax_denorm_mat.species	species
 tax_denorm_mat.subfamily	subfamily
 tax_denorm_mat.subspecies	subspecies
 tax_denorm_mat.tribe	tribe
-tax_denorm_mat.taxon	identification
+tax.taxon	identification
 specimen.id	specimenid
 specimen.identification_method	identification_method
 specimen.isolate	fieldid
