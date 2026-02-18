@@ -99,4 +99,4 @@ record_features_rollup.fasta_count	fasta_count
 record_features_rollup.fastq_count	fastq_count
 record_features_rollup.stopcodon_present	stopcodon_present
 record_features_rollup.compliance_level	compliance_level
-record_features_rollup.features_updated	features_updated
+record_features_rollup.updated 	features_updated
