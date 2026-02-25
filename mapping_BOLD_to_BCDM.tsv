@@ -27,7 +27,7 @@ seqdata.updated	sequence_upload_date
 seqentry.processid	processid
 seqentry.processid.marker.code	record_id
 specimen__fk_inst.inst.name	inst
-specimen.catalognum	museumid
+specimen.catalognumber	museumid
 specimen.collectioncode	collection_code
 specimen.created	processid_minted_date
 specimen.extrainfo	short_note
@@ -41,7 +41,7 @@ tax_denorm_mat.species	species
 tax_denorm_mat.subfamily	subfamily
 tax_denorm_mat.subspecies	subspecies
 tax_denorm_mat.tribe	tribe
-tax_denorm_mat.taxon	identification
+tax.taxon	identification
 specimen.id	specimenid
 specimen.identification_method	identification_method
 specimen.isolate	fieldid
@@ -91,3 +91,12 @@ specimendetails.specimen_weight_g	specimen_weight_g
 specimendetails.tissuetype	tissue_type
 specimendetails.vouchertype	voucher_type
 tax.refr	species_reference
+record_features_rollup.image_count	image_count
+record_features_rollup.coord_present	coord_present
+record_features_rollup.country_present	country_present
+record_features_rollup.trace_count	trace_count
+record_features_rollup.fasta_count	fasta_count
+record_features_rollup.fastq_count	fastq_count
+record_features_rollup.stopcodon_present	stopcodon_present
+record_features_rollup.compliance_level	compliance_level
+record_features_rollup.updated	features_updated

@@ -7,11 +7,7 @@ from datetime import datetime
 import pandas as pd
 
 _ACCEPTED_SUB_TYPES = ['specimen']
-'''_MIN_REQUIRED_FIELDS = {
-    'specimen:update': [tuple(['sampleid', 'processid'])],
-    'specimen:new':['bold_recordset_code_arr', 'sampleid']
-}'''
-
+_UNIQUE_FIELDS = ['sampleid', 'processid']
 PLACEHOLDER_REGEX = {
     "%s": ".+",          # any non-empty string
     "%d": r"\d+",        # integer number
@@ -31,6 +27,7 @@ def read_mapping (file):
     return pd.read_csv(file, sep='\t') #, index_col="field")
 
 def isvalid_value (value, expected_datatype, expected_dataformat):
+
     if value == "": return True
     # 1. Type check
     try:
@@ -40,7 +37,7 @@ def isvalid_value (value, expected_datatype, expected_dataformat):
             int(value)
         elif expected_datatype in ['float', 'number']:
             float(value)
-        elif expected_datatype == ['string:date', 'date']:
+        elif expected_datatype in ['string:date', 'date']:
             str(value)
             dateparser.parse(value)
         elif expected_datatype == 'char':
@@ -63,7 +60,7 @@ def isvalid_value (value, expected_datatype, expected_dataformat):
         #print (e, file=sys.stderr)
         return False
         
-    # 2. Format check
+    # 2. Format checkFdebug
     
     try: 
         if expected_dataformat != 'default':
@@ -71,7 +68,7 @@ def isvalid_value (value, expected_datatype, expected_dataformat):
             if expected_datatype =='string:date':
                 #blah = dateparser.parse(value, date_formats=[expected_dataformat], settings={'STRICT_PARSING': True})
                 parsed_date = datetime.strptime(value, expected_dataformat)
-                if parsed_date.strftime(expected_dataformat) != date_str:
+                if parsed_date.strftime(expected_dataformat) != value:
                     #print (value, file=sys.stderr)
                     #print (parsed_date, file=sys.stderr)
                     #print (parsed_date.strftime(expected_dataformat), file=sys.stderr)
@@ -88,7 +85,7 @@ def isvalid_value (value, expected_datatype, expected_dataformat):
         return False
     return True
             
-def validate_submission_obj (json_obj, bcdm_mapping):
+def validate_submission_obj (json_obj, bcdm_mapping, uniq_field_count):
     isValid = True
     msgs = []
     
@@ -114,7 +111,7 @@ def validate_submission_obj (json_obj, bcdm_mapping):
     if len(invalid_fields) > 0:
         for invalid_field in invalid_fields:
             del(json_obj['submission_packet'][invalid_field])
-        print (f"[WARNING][Request {json_obj['id']}] Invalid fields found ", invalid_fields, file = sys.stderr)
+        print (f"[WARNING][Request {json_obj['id']}] Invalid fields found and removed: {', '.join(invalid_fields)}", file = sys.stderr)
     print (f"[LOG][Request {json_obj['id']}] Accepted fields: {','.join(json_obj['submission_packet'].keys())}", file = sys.stderr)
 
     # datmatype check against mapping
@@ -124,12 +121,20 @@ def validate_submission_obj (json_obj, bcdm_mapping):
             #print (f"[DEBUG] Check type for {bcdm_field}")
             row = bcdm_mapping[bcdm_mapping['field']== bcdm_field].iloc[0]
             if not isvalid_value (json_obj['submission_packet'][bcdm_field], row['data_type'], row['data_format']):
-                print (f"[DEBUG] Bad type for {bcdm_field}; value:{json_obj['submission_packet'][bcdm_field]}; type:{row['data_type']}; format:{row['data_format']}", file=sys.stderr)
+                #print (f"[DEBUG] Bad type for {bcdm_field}; value:{json_obj['submission_packet'][bcdm_field]}; type:{row['data_type']}; format:{row['data_format']}", file=sys.stderr)
                 invalid_fields.append (bcdm_field)
 
     if len(invalid_fields)>0:
         isValid = False
         msgs.append (f"[ERROR][Request {json_obj['id']}] Invalid data type/format for {len(invalid_fields)} fields: {','.join (invalid_fields)}")
+
+    # unique field check among rest of submissions
+    for bcdm_field in _UNIQUE_FIELDS:
+        if bcdm_field in json_obj['submission_packet'] and json_obj['submission_packet'][bcdm_field]:
+            value = json_obj['submission_packet'][bcdm_field]
+            if uniq_field_count[bcdm_field][value] > 1:
+                isValid = False
+                msgs.append (f"[ERROR][Request {json_obj['id']}] {bcdm_field} provided ({value}) is not unique in submissions ({uniq_field_count[bcdm_field][value]} occurrence)")
     return isValid, msgs
 
 def main(args):
@@ -143,23 +148,39 @@ def main(args):
     
     # Process Input Data Jsonl
     results = []
+    data = []
+    uniq_field_count = {field: {} for field in _UNIQUE_FIELDS}
+
+    ## Prep-process
     for line in sys.stdin:
         line = line.strip("\n")
-        isValid, msgs = validate_submission_obj (json.loads(line), bcdm_mapping)
+        obj = json.loads(line)
+        
+        # Get distinct list of unique fields for validation later
+        for uniq_bcdm_field in _UNIQUE_FIELDS:            
+            if uniq_bcdm_field in obj['submission_packet'] and obj['submission_packet'][uniq_bcdm_field]:
+                value = obj['submission_packet'][uniq_bcdm_field]
+                uniq_field_count [uniq_bcdm_field][value]= uniq_field_count [uniq_bcdm_field].get (value, 0) +1
+
+        data.append (obj)
+
+    ## Process each submission Object 
+    for single_submission in data: 
+        isValid, msgs = validate_submission_obj (single_submission, bcdm_mapping, uniq_field_count)
         if not isValid: 
             print ( "\n".join (msgs), file=sys.stderr)
             error_count+=1
         else:
             if not args.atomicity == 'all-or-nothing': 
-                print (line)
+                print (json.dumps(single_submission))
             else:
-                results.append (line)
+                results.append (single_submission)
 
     if error_count > 0 and args.atomicity == 'all-or-nothing': 
         print (f"[ABORT] all-or-nothing atomicity: {error_count} records invalid. ", file=sys.stderr)
         sys.exit (1)
     elif error_count== 0 and args.atomicity == 'all-or-nothing': 
-        print ("\n".join (results))
+        print ("\n".join (json.dumps(single_submission)))
 
 if __name__ == "__main__":
 
@@ -167,9 +188,8 @@ if __name__ == "__main__":
         description="""This tool takes a data JSONL in BCDM format and checks whether submission objects are in valid format.  If all-or-nothing is set for atomicity, 
         all submission objects must be valid before they will be written to stdout.  All error messages should be captured in stderr.  
 
-Usage: cat data_bcdm.jsonl | python acceptability_check.py  --bcdm_def /file/path/field_definitions.tsv --update --atomicity all-or-nothing > /file/path/filtered.jsonl 2> /file/path/err.log;
+Usage: cat data_bcdm.jsonl | python 1_acceptability_check.py  --bcdm_def /file/path/field_definitions.tsv --atomicity all-or-nothing --reqfields sampleid bold_recordset_code_arr > /file/path/filtered.jsonl 2> /file/path/err.log;
 """)
-    #parser.add_argument("--username", type=str, required=True, help="Username")
     parser.add_argument("--bcdm-def", type=str, required=True, help="Path to the BCDM definition file.")
     parser.add_argument("--atomicity", type = str, required=False, choices = ["all-or-nothing", "any"], default="all-or-nothing", help="any means that records are checks invididually; all-or-nothing means that all recotds must be valid to be accepted")
     parser.add_argument("--reqfields", type=str, nargs='+', required=False,default=["sampleid","country","phylum"], help="list of bcdm fields that are required for submission")

@@ -99,3 +99,14 @@ confidence_of_identification	string	default	forensic extension	Confidence of the
 coc_start_coord	geopoint	array	forensic extension - advanced	Latitude & Longitude in decimal degrees (DD) format (e.g. 45.837) of the location where the COC process started.
 field_provisional_name	string	default	forensic extension - advanced	Common name ascribed to the specimen in the field prior to analysis or expert identification.
 microsatellite_genotype	json	json	individualization extension	Locus and allele sizes in the format: LocusA:128/130; LocusB:212/212; LocusC:178/182.  Two values for diploid and additional for polyploid.
+image_count	integer	default	feature rollup	The count of images assocaited with the specimen
+coord_present	boolean	default	feature rollup	True if a coordinate is provided and is valid
+country_present	boolean	default	feature rollup	True if a country is provided and is valid
+trace_count	integer	default	feature rollup	Count of traces associated with the marker
+fasta_count	integer	default	feature rollup	Count of fasta records assocaited with the marker
+fastq_count	integer	default	feature rollup	Count of fastq records assocaited with the marker
+stopcodon_present	boolean	default	feature rollup	True if the marker is protien coding and the translation includes a stop codon
+compliance_level	string	default	feature rollup	Compliance level of the record
+features_updated	string:date	%Y-%m-%d	feature rollup	Date when the feature rollup was last updated
+
+

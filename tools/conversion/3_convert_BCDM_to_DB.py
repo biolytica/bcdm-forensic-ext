@@ -1,7 +1,9 @@
 import argparse
-import json, sys, os, csv, re
+import json, sys, os, csv
 
 import urllib.parse
+
+from conversion_util import isvalid_value, parse_datatype
 
 __ACCEPTED_RECORDID_FIELDS = ['processid', 'sampleid']
 #__EXCLUDED_FIELDS = ['record_id']
@@ -43,82 +45,12 @@ def convert_upload_single_package (json_obj, bcdm_to_bold_mapping):
     return converted_obj #{record_identifier:converted_obj}
 
 ########## Helper Functions ##########
-def parse_datatype (bold_field_type):
-    __SIMPLE_TYPES = ['timestamp without time zone', 'character', 'character varying', 'integer', 'point', 'real', 'date', 'jsonb', 'text']
-    isArray = False
-    max_length = None
-    candidate_basic_type = bold_field_type.strip()
-    if candidate_basic_type.endswith ("[]"):  # array
-        isArray = True
-        candidate_basic_type = candidate_basic_type.removesuffix("[]")
-        #if not basic_type in __SIMPLE_TYPES:
-        #    raise Exception (f"Invalid data type in mapping file for bold_field_type: {bold_field_type}")
-
-    # single value
-    if candidate_basic_type in __SIMPLE_TYPES:
-        basic_type = candidate_basic_type
-    elif candidate_basic_type.startswith("character varying") and candidate_basic_type.endswith(")") :
-        basic_type = 'character varying'
-        max_length = int(re.search (f'\((\d+)\)', candidate_basic_type).group(1))
-    elif candidate_basic_type.startswith("character") and candidate_basic_type.endswith(")") :
-        basic_type = 'character'
-        max_length = int(re.search (f'\((\d+)\)', candidate_basic_type).group(1))
-    else:
-        raise Exception (f"Unexpected error processing bold_field_type: {bold_field_type}.")
-
-    return basic_type, max_length, isArray
-    
-## TODO: revise for postgresql datatype check
-## TODO: how to check array
-def isvalid_value (value, expected_datatype, max_length = None):
-    if value == "": return True
-    
-    #print (f"[DEBUG]IsValid Check on {value}, expected {expected_datatype} < {max_length} char", file=sys.stderr)
-    # 1. Type check
-    try:
-        if expected_datatype in ['character', 'character varying']:
-            str(value)
-        elif expected_datatype in ['integer']:
-            int(value)
-        elif expected_datatype in ['real']:
-            float(value)
-        elif expected_datatype == ['timestamp without time zone', 'date']:
-            str(value)
-            dateparser.parse(value)
-        #elif expected_datatype == 'char':
-        #    if not isinstance (value, str) or not len(value)==1:
-        #        return False
-        elif expected_datatype == 'point':       # TODO: confirm input format
-            temp_array = value.split(",")
-            if len(temp_array) != 2:
-                return False
-        elif expected_datatype == 'array':
-            value.split(",")
-        elif expected_datatype == 'array of string':
-            temp_array = value.split(",")
-            for val in temp_array:
-                str(val)
-        elif expected_datatype == 'jsonb':
-            json.loads(value)
-        
-    except Exception as e:
-        #print (e, file=sys.stderr)
-        return False
-        
-    # 2. Format check
-    if max_length is not None: 
-        if len (str(value)) > max_length:
-            return False
-    
-    
-    return True
     
 def get_bcdm_to_bold_mapping (excluded_fields=None):   
     """
     This function returned a dictionary of db_field mapping where the keys are the universal fields.  If the optional param excluded_fields 
     is provided, the fields matching to ones in this list will NOT be returned.
     """
-    delimiter = '__'
     filepath = args.mapping
     db_mapping = {}
 
@@ -146,6 +78,7 @@ def get_bcdm_to_bold_mapping (excluded_fields=None):
     return db_mapping
 
 # TODO: add logic for mode? 
+## This function validates submitted data including foreign table schema
 def validate_against_db_schema (json_obj, bcdm_to_bold_mapping, mode = 'warning'):
     data_json = json_obj['submission_packet']
     is_valid = True
@@ -163,23 +96,29 @@ def validate_against_db_schema (json_obj, bcdm_to_bold_mapping, mode = 'warning'
             else:
                 expected_datatype, expected_array = bcdm_to_bold_mapping[bcdm_field]['field_datatype']
                 expected_dataformat = bcdm_to_bold_mapping[bcdm_field]['max_length']
-            
+                
             if type(value) is list: # Found list
-                if not expected_array:
+                print (f"Found list for field {bcdm_field}")
+                print (value)
+                if not expected_array:              
                     is_valid = False
+                    errors.append (f"Array found for non-array field (Field: {bcdm_field}; Value:{value})")
                 else:   
                     for single_value in value:                    
-                        if not isvalid_value (single_value, expected_datatype, expected_dataformat):
+                        is_value_valid, reason = isvalid_value (single_value, expected_datatype, expected_dataformat)
+                        if not is_value_valid: 
                             is_valid = False
-                            errors.append (f"[WARNING][Invalid Data Type]Field:{bcdm_field}; Value:{single_value}]")
+                            errors.append (f"Invalid Data Type/Format (Field: {bcdm_field}; Value:{single_value}; Reason:{reason})")
                                 
             else:   # Found Single value 
                 if expected_array:  
                     is_valid = False
+                    errors.append (f"Non-array data found for array field (Field: {bcdm_field}; Value:{value})")
                 else:
-                    if not isvalid_value (value, expected_datatype, expected_dataformat):
+                    is_value_valid, reason = isvalid_value (value, expected_datatype, expected_dataformat)
+                    if not is_value_valid: 
                         is_valid = False
-                        errors.append (f"[WARNING][Invalid Data Type 2]Field:{bcdm_field}; Value:{value}; Expect Type {expected_datatype}")
+                        errors.append (f"Invalid Data Type/Format (Field: {bcdm_field}; Value:{value}; Reason:{reason})")
                             
     return is_valid, errors
     
@@ -201,10 +140,9 @@ def main(args):
     for line in sys.stdin:
         json_obj = json.loads(line.strip("\n"))
         try:
-            
             isValid, errors = validate_against_db_schema (json_obj, bcdm_to_bold_mapping)
             if not isValid:
-                print ("\n".join (errors), file=sys.stderr)
+                raise Exception ("\n".join ([f"[ERROR][Request {json_obj['id']}]{msg}" for msg in errors]))
                 
             converted_obj = convert_upload_single_package (json_obj, bcdm_to_bold_mapping) 
             if not converted_obj: 
@@ -229,13 +167,10 @@ if __name__ == "__main__":
         description="""This tool takes validated BCDM objects in jsonl format and converts to an intermediate format. 
 This tool can run any machine with access to internet.
 
-Usage: python orchestrator_submission.py --data-tsv data_records.tsv --server-url 'http://localhost:8000" --username cwei --project CWEI --request-id TICKET#1234"
+Usage: cat validated_data_bcdm.jsonl | python 3_convert_BCDM_to_DB.py --atomicity all-or-nothing --mapping /file/to/mapping_BCDM_to_BOLD.tsv >> /file/path/bold_format.jsonl 2>> /file/path/err.log;
 """)
-    #parser.add_argument("--update", default=False, action=argparse.BooleanOptionalAction, help="If set, record existence is required to proceed with the update. Otherwise, new record submission is requested.")
     parser.add_argument("--mapping", type=str, required=True, help="File path for the BCDM field to BOLD DB field mapping")
     parser.add_argument("--atomicity", type = str, required=False, choices = ["all-or-nothing", "any"], default="all-or-nothing", help="any means that records are checks invididually; all-or-nothing means that all records must be valid to be accepted")
-
-    #parser.add_argument ("--append", default=False, action=argparse.BooleanOptionalAction, help="If specified, append collapsed field instead of replace original")
     args = parser.parse_args()
  
     main(args)
