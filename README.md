@@ -127,6 +127,18 @@ The included [package.metadata.template.json](package.metadata.template.json) is
 
 For forensic exchange scenarios, the package metadata is also the right place to document provenance, responsible parties, and any workflow-specific notes that are broader than a single record.
 
+This repository does not, by itself, make every downstream dataset fully Frictionless-compliant. Users of this data model are expected to complete the remaining packaging steps for their own release artifacts. At minimum, that means:
+
+- replacing all placeholder values in [package.metadata.template.json](package.metadata.template.json)
+- publishing a dataset-specific package descriptor, typically as `datapackage.json`
+- choosing a concrete tabular serialization for the packaged resource, such as CSV, TSV, or JSONL
+- confirming that the chosen serialization is supported by the Frictionless validator and workflow being used
+- adding any required resource metadata for that serialization, such as a tab `dialect` for TSV files
+- adding dataset-specific constraints, keys, provenance, and licensing metadata where needed
+- validating the finished package with Frictionless tooling before distribution
+
+In other words, this repository provides the model-aligned schema template and supporting artifacts, but the final compliance work belongs to the publisher of each dataset.
+
 ## Validation and Conversion Tools
 
 The repository includes Python utilities that operate on JSONL streams and support a typical submission pipeline:
