@@ -189,6 +189,10 @@ This repository is intended for developers, data managers, and integration teams
 
 The repository should be treated as the working specification and implementation scaffold for the BCDM forensic extension. The TSV definitions and mappings are the authoritative artifacts in this repository; the helper scripts provide a reference processing pipeline around them.
 
+## Citation
+
+If you use this data model, its definitions, or its mappings in a published workflow or downstream release, cite the repository using [CITATION.cff](CITATION.cff). The repository citation is attributed to **Biolytica Inc.**
+
 ## License
 
 This repository currently ships with the GNU GPL v3 license text in [LICENSE](LICENSE).

@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this data model, please cite it using the metadata below."
+type: dataset
+title: "BCDM Forensic Extension"
+abstract: "A Frictionless-compatible set of field definitions, controlled vocabularies, and mappings that extends the Barcode Core Data Model for forensic workflows."
+authors:
+  - name: "Biolytica Inc."
+repository-code: "https://github.com/biolytica/bcdm-forensic-ext"
+url: "https://github.com/biolytica/bcdm-forensic-ext"
+license: "GPL-3.0-only"
+keywords:
+  - "bcdm"
+  - "bcdm-forensic-extension"
+  - "forensic data model"
+  - "dna barcoding"
+  - "frictionless data"
