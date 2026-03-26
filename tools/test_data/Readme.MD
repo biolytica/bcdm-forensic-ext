@@ -14,7 +14,7 @@ For each scripts, its corresponding test files will be prefixed with script numb
 ## Example Commands
 ```bash
 
-bcdm="/opt/modules/BCDM-forensic-extension"
+bcdm="../.."  # path to bcdm-forensic-ext repo root (relative to this test_data directory)
 testDir="$bcdm/tools/test_data/"
 
 conda activate
