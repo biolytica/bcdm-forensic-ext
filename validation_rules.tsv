@@ -1,0 +1,9 @@
+field	rule	value	message
+collector_email	pattern	^[^@\s]+@[^@\s]+\.[^@\s]+$	Must be a valid email address
+identifier_email	pattern	^[^@\s]+@[^@\s]+\.[^@\s]+$	Must be a valid email address
+collector_phone	pattern	^[+\d][\d\s\-()+.]{5,25}$	Must be a valid phone number
+specimen_linkout	pattern	^https?://[^\s,;]+([\s]*[,;][\s]*https?://[^\s,;]+)*$	Must be one or more valid URLs (http:// or https://), separated by commas or semicolons
+specimen_height_cm	min	0	Must be a positive number
+specimen_weight_g	min	0	Must be a positive number
+specimen_length_cm	min	0	Must be a positive number
+biobank_catalog_number	pattern	^.+:.+$	Must be in format prefix:number (e.g. LAB:12345)

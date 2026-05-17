@@ -101,3 +101,33 @@ BOWP:CAOS:DOC12	document	lab-sequence-assembly	Ronny to add definition
 BOWP:CAOS:DOC13	document	lab-result-statement	Ronny to add definition
 BOWP:CAOS:DOC14	document	taxonomic-id-statement	Ronny to add definition
 BOWP:CAOS:DOC15	document	lab-administrative-review-statement	Ronny to add definition
+BOLD:CV:SEX1	sex	Male	The specimen is male.
+BOLD:CV:SEX2	sex	Female	The specimen is female.
+BOLD:CV:SEX3	sex	Hermaphrodite	The specimen possesses both male and female reproductive organs.
+BOLD:CV:VT1	voucher_type	Museum Vouchered:Type	Specimen is a type specimen housed in a museum collection.
+BOLD:CV:VT2	voucher_type	Museum Vouchered:Type Series	Specimen is part of a type series housed in a museum collection.
+BOLD:CV:VT3	voucher_type	Vouchered:Registered Collection	Specimen is vouchered in a registered collection.
+BOLD:CV:VT4	voucher_type	To Be Vouchered:Holdup/Private	Specimen is to be vouchered but is currently on hold or in a private collection.
+BOLD:CV:VT5	voucher_type	E-Vouchered:DNA/Tissue+Photo	Specimen is electronically vouchered with DNA/tissue and photographic documentation.
+BOLD:CV:VT6	voucher_type	Dna/Tissue Vouchered Only	Only DNA or tissue from the specimen has been vouchered.
+BOLD:CV:VT7	voucher_type	No Specimen	No physical specimen exists; record is based on sequence data only.
+BOLD:CV:REP1	reproduction	Sexual	Reproduction occurs via sexual means.
+BOLD:CV:REP2	reproduction	Asexual	Reproduction occurs via asexual means.
+BOLD:CV:REP3	reproduction	Cyclic Parthenogen	Reproduction alternates between sexual and asexual (parthenogenetic) cycles.
+BOLD:CV:LS1	life_stage	Adult	Specimen is in the adult life stage.
+BOLD:CV:LS2	life_stage	Immature	Specimen is in an immature life stage.
+BOLD:CV:LS3	life_stage	Juvenile	Specimen is in the juvenile life stage.
+BOLD:CV:LS4	life_stage	Pupa	Specimen is in the pupal life stage.
+BOLD:CV:TT1	tissue_type	Muscle	Muscle tissue sample.
+BOLD:CV:TT2	tissue_type	Liver	Liver tissue sample.
+BOLD:CV:TT3	tissue_type	Gill	Gill tissue sample.
+BOLD:CV:TT4	tissue_type	Leg	Leg tissue sample.
+BOLD:CV:TT5	tissue_type	Wing	Wing tissue sample.
+BOLD:CV:TT6	tissue_type	Fin Clip	Fin clip tissue sample.
+BOLD:CV:TT7	tissue_type	Leaf	Leaf tissue sample.
+BOLD:CV:TT8	tissue_type	Root	Root tissue sample.
+BOLD:CV:TT9	tissue_type	Whole Organism	Entire organism used as sample.
+BOLD:CV:TT10	tissue_type	Blood	Blood sample.
+BOLD:CV:TT11	tissue_type	Feather	Feather sample.
+BOLD:CV:TT12	tissue_type	Hair	Hair sample.
+BOLD:CV:TT13	tissue_type	Skin	Skin tissue sample.
