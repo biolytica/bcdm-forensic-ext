@@ -1,61 +1,61 @@
 term_id	field	term	definition
-BOLD:CV:IDM1	Identification_method	BOLD ID Engine: top hits	Uses the BOLD Identification Engine to compare query sequences against BOLD’s reference library, identifying the top matching taxa based on sequence similarity.
-BOLD:CV:IDM2	Identification_method	BOLD ID Engine: classification	Employs the BOLD Identification Engine to classify query sequences to higher taxonomic levels (e.g., genus or family), providing broader taxonomic resolution when species-level matches are inconclusive.
-BOLD:CV:IDM3	Identification_method	SINTAX	A sequence identification method that assigns taxonomy based on sequence similarity, using probabilistic taxonomic prediction.
-BOLD:CV:IDM4	Identification_method	Tree based identification	Uses phylogenetic trees to infer relationships between query sequences and reference sequences, identifying the query’s taxonomic position within a tree structure.
-BOLD:CV:IDM5	Identification_method	Image based identification	Relies on visual comparison of specimen images to known species or type specimens, typically using image databases or machine learning models.
-BOLD:CV:IDM6	Identification_method	Taxonomic key	Relies on a structured, step-by-step comparison of morphological or genetic traits to identify organisms, enabling users to narrow down the set of potential identifications until a taxonomic determination can be made.
-BOLD:CV:IDM7	Identification_method	Comparison with type specimen	Involves direct comparison of a specimen with a designated type specimen in a reference collection, with type specimens serving as the standard for each species.
-BOLD:CV:IDM8	Identification_method	Literature	Relies on published literature for identification by referencing documented characteristics, descriptions, or visual guides.
-BOLD:CV:IDM9	Identification_method	Field observation	Identification based on in-situ observations, relying on physical traits, behaviors, and habitat context.
-BOLD:CV:IDM10	Identification_method	Morphology	Uses anatomical and physical characteristics to identify specimens. Morphological identification requires expertise in taxonomy, especially for highly similar or cryptic species.
-BOLD:CV:IDM11	Identification_method	mBRAVE ID Engine	The mBRAVE Identification Engine processes and compares DNA barcodes in environmental or bulk samples, providing taxonomic assignments.
-BOLD:CV:IDM12	Identification_method	Unspecified	Refers to identification methods where specific techniques are not documented, often used when identification sources are not fully recorded or when multiple identification methods are employed together.
-BOLD:CV:IDM13	Identification_method	NCBI BLAST: top hits	Uses the National Center for Biotechnology Information (NCBI) BLAST tool to identify query sequences by matching them against NCBI’s nucleotide databases, listing the top matching sequences based on high sequence similarity.
-BOLD:CV:IDM14	Identification_method	Sequence feature based classification	Identifies taxa based on specific nucleotide or amino acid motifs, distinguishing groups with characteristic sequence patterns.
+BOLD:CV:IDM1	Identification_method	BOLD ID Engine: top hits	"Uses the BOLD Identification Engine to compare query sequences against BOLD’s reference library, identifying the top matching taxa based on sequence similarity."
+BOLD:CV:IDM2	Identification_method	BOLD ID Engine: classification	"Employs the BOLD Identification Engine to classify query sequences to higher taxonomic levels (e.g., genus or family), providing broader taxonomic resolution when species-level matches are inconclusive."
+BOLD:CV:IDM3	Identification_method	SINTAX	"A sequence identification method that assigns taxonomy based on sequence similarity, using probabilistic taxonomic prediction."
+BOLD:CV:IDM4	Identification_method	Tree based identification	"Uses phylogenetic trees to infer relationships between query sequences and reference sequences, identifying the query’s taxonomic position within a tree structure."
+BOLD:CV:IDM5	Identification_method	Image based identification	"Relies on visual comparison of specimen images to known species or type specimens, typically using image databases or machine learning models."
+BOLD:CV:IDM6	Identification_method	Taxonomic key	"Relies on a structured, step-by-step comparison of morphological or genetic traits to identify organisms, enabling users to narrow down the set of potential identifications until a taxonomic determination can be made."
+BOLD:CV:IDM7	Identification_method	Comparison with type specimen	"Involves direct comparison of a specimen with a designated type specimen in a reference collection, with type specimens serving as the standard for each species."
+BOLD:CV:IDM8	Identification_method	Literature	"Relies on published literature for identification by referencing documented characteristics, descriptions, or visual guides."
+BOLD:CV:IDM9	Identification_method	Field observation	"Identification based on in-situ observations, relying on physical traits, behaviors, and habitat context."
+BOLD:CV:IDM10	Identification_method	Morphology	"Uses anatomical and physical characteristics to identify specimens. Morphological identification requires expertise in taxonomy, especially for highly similar or cryptic species."
+BOLD:CV:IDM11	Identification_method	mBRAVE ID Engine	"The mBRAVE Identification Engine processes and compares DNA barcodes in environmental or bulk samples, providing taxonomic assignments."
+BOLD:CV:IDM12	Identification_method	Unspecified	"Refers to identification methods where specific techniques are not documented, often used when identification sources are not fully recorded or when multiple identification methods are employed together."
+BOLD:CV:IDM13	Identification_method	NCBI BLAST: top hits	"Uses the National Center for Biotechnology Information (NCBI) BLAST tool to identify query sequences by matching them against NCBI’s nucleotide databases, listing the top matching sequences based on high sequence similarity."
+BOLD:CV:IDM14	Identification_method	Sequence feature based classification	"Identifies taxa based on specific nucleotide or amino acid motifs, distinguishing groups with characteristic sequence patterns."
 BOLD:CV:SMPRC1	Sampling_protocol	Berlese funnel	Uses a Berlese funnel to extract small invertebrates from soil or leaf litter by driving them into a collection container with light and heat.
-BOLD:CV:SMPRC2	Sampling_protocol	Bottle trap	Involves baiting a bottle with attractants and placing it in the environment to capture insects, targeting flying or ground-dwelling arthropods attracted to various baits like fruit or decomposing material.
-BOLD:CV:SMPRC3	Sampling_protocol	Dip net	Uses a fine-mesh net to sample aquatic organisms by dipping it into water bodies, capturing small fish, invertebrates, and other organisms near the water surface or in vegetation.
+BOLD:CV:SMPRC2	Sampling_protocol	Bottle trap	"Involves baiting a bottle with attractants and placing it in the environment to capture insects, targeting flying or ground-dwelling arthropods attracted to various baits like fruit or decomposing material."
+BOLD:CV:SMPRC3	Sampling_protocol	Dip net	"Uses a fine-mesh net to sample aquatic organisms by dipping it into water bodies, capturing small fish, invertebrates, and other organisms near the water surface or in vegetation."
 BOLD:CV:SMPRC4	Sampling_protocol	Emergence trap	Covers a section of habitat to trap emerging insects as they develop from juvenile stages to adults.
-BOLD:CV:SMPRC5	Sampling_protocol	Emergence trap + Berlese funnel	Combines emergence traps with Berlese funnels to capture both emerging insects and soil organisms, allowing for comprehensive sampling of surface and subterranean life stages.
-BOLD:CV:SMPRC6	Sampling_protocol	Intercept trap	Captures flying insects by blocking their flight paths with a vertical barrier, directing them into a collection container.
-BOLD:CV:SMPRC7	Sampling_protocol	Malaise trap	A tent-like structure that intercepts and captures flying insects by guiding them upward into a collection bottle, commonly used for flying insects like hymenopterans and dipterans.
+BOLD:CV:SMPRC5	Sampling_protocol	Emergence trap + Berlese funnel	"Combines emergence traps with Berlese funnels to capture both emerging insects and soil organisms, allowing for comprehensive sampling of surface and subterranean life stages."
+BOLD:CV:SMPRC6	Sampling_protocol	Intercept trap	"Captures flying insects by blocking their flight paths with a vertical barrier, directing them into a collection container."
+BOLD:CV:SMPRC7	Sampling_protocol	Malaise trap	"A tent-like structure that intercepts and captures flying insects by guiding them upward into a collection bottle, commonly used for flying insects like hymenopterans and dipterans."
 BOLD:CV:SMPRC8	Sampling_protocol	Mercury vapour trap	Uses a mercury vapour light to attract nocturnal insects to a collection area or surface.
-BOLD:CV:SMPRC9	Sampling_protocol	Mustard extraction	Applies mustard solution to soil to irritate and extract earthworms and other soil invertebrates, driving them to the surface for collection.
-BOLD:CV:SMPRC10	Sampling_protocol	Pan trap	A passive trap using colored pans filled with water or detergent to attract and capture flying insects. The color lures specific insect groups, especially bees and wasps.
-BOLD:CV:SMPRC11	Sampling_protocol	Pitfall trap	Consists of a container buried in the ground, capturing ground-dwelling arthropods like beetles and spiders as they fall in.
-BOLD:CV:SMPRC12	Sampling_protocol	Plankton tow	Involves towing a fine-mesh net through water to collect planktonic organisms, targeting phytoplankton, zooplankton, and small invertebrates.
-BOLD:CV:SMPRC13	Sampling_protocol	Sweep net	Uses a net to sweep through vegetation to capture insects and spiders, sampling terrestrial arthropods in tall grasses, shrubs, and other vegetation.
-BOLD:CV:SMPRC14	Sampling_protocol	UV bucket	Uses a UV light to attract night-flying insects to a collection bucket, targeting insects sensitive to UV light.
+BOLD:CV:SMPRC9	Sampling_protocol	Mustard extraction	"Applies mustard solution to soil to irritate and extract earthworms and other soil invertebrates, driving them to the surface for collection."
+BOLD:CV:SMPRC10	Sampling_protocol	Pan trap	"A passive trap using colored pans filled with water or detergent to attract and capture flying insects. The color lures specific insect groups, especially bees and wasps."
+BOLD:CV:SMPRC11	Sampling_protocol	Pitfall trap	"Consists of a container buried in the ground, capturing ground-dwelling arthropods like beetles and spiders as they fall in."
+BOLD:CV:SMPRC12	Sampling_protocol	Plankton tow	"Involves towing a fine-mesh net through water to collect planktonic organisms, targeting phytoplankton, zooplankton, and small invertebrates."
+BOLD:CV:SMPRC13	Sampling_protocol	Sweep net	"Uses a net to sweep through vegetation to capture insects and spiders, sampling terrestrial arthropods in tall grasses, shrubs, and other vegetation."
+BOLD:CV:SMPRC14	Sampling_protocol	UV bucket	"Uses a UV light to attract night-flying insects to a collection bucket, targeting insects sensitive to UV light."
 BOLD:CV:SMPRC15	Sampling_protocol	UV light Sheet	A setup with a UV light and white sheet to attract and capture nocturnal insects.
-BOLD:CV:SMPRC16	Sampling_protocol	UV light trap	Utilizes a UV light to draw insects into a collection device, effective for sampling flying insects such as moths and beetles.
-BOLD:CV:SMPRC17	Sampling_protocol	Water bucket trap	A passive method where a bucket filled with water captures small animals that fall in, useful for capturing a variety of ground-dwelling organisms.
-BOLD:CV:SMPRC18	Sampling_protocol	Beating net	Involves hitting vegetation with a stick to dislodge insects onto a net or cloth, effective for collecting arthropods hiding in branches, leaves, and bark.
-BOLD:CV:SMPRC19	Sampling_protocol	Fogging	Disperses insecticide fog into the canopy to sample insects and arthropods that fall onto collection sheets, widely used to capture canopy insects.
-BOLD:CV:SMPRC20	Sampling_protocol	Handfang	Collecting specimens by hand, often with forceps or small containers, particularly for species that cannot be effectively captured by traps.
-BOLD:CV:SMPRC21	Sampling_protocol	Light trap	Uses light to attract nocturnal insects, appealing to certain insect groups.
-BOLD:CV:SMPRC22	Sampling_protocol	Petite Ponar	A sampling device used to collect benthic sediments in aquatic environments, primarily for collecting benthic invertebrates and sediment samples.
-BOLD:CV:SMPRC23	Sampling_protocol	Sifting	Involves sifting soil, leaf litter, or detritus to collect small arthropods and other invertebrates, often with a fine mesh or sieve.
-BOLD:CV:SMPRC24	Sampling_protocol	Free hand collection	Collection by hand without specific tools, often for easily accessible organisms.
-BOLD:CV:SMPRC25	Sampling_protocol	Schindler-Patalas sampler	A water sampling device used to collect samples from specific depths in lakes, valuable for studying aquatic biodiversity and collecting plankton.
-BOLD:CV:SMPRC26	Sampling_protocol	SLAM trap (4-headed)	An interception trap with four collection heads, designed to capture flying insects from multiple directions.
-BOLD:CV:SMPRC27	Sampling_protocol	SLAM trap (single-headed)	A simplified SLAM trap with one collection head, used to intercept flying insects by blocking their flight path.
+BOLD:CV:SMPRC16	Sampling_protocol	UV light trap	"Utilizes a UV light to draw insects into a collection device, effective for sampling flying insects such as moths and beetles."
+BOLD:CV:SMPRC17	Sampling_protocol	Water bucket trap	"A passive method where a bucket filled with water captures small animals that fall in, useful for capturing a variety of ground-dwelling organisms."
+BOLD:CV:SMPRC18	Sampling_protocol	Beating net	"Involves hitting vegetation with a stick to dislodge insects onto a net or cloth, effective for collecting arthropods hiding in branches, leaves, and bark."
+BOLD:CV:SMPRC19	Sampling_protocol	Fogging	"Disperses insecticide fog into the canopy to sample insects and arthropods that fall onto collection sheets, widely used to capture canopy insects."
+BOLD:CV:SMPRC20	Sampling_protocol	Handfang	"Collecting specimens by hand, often with forceps or small containers, particularly for species that cannot be effectively captured by traps."
+BOLD:CV:SMPRC21	Sampling_protocol	Light trap	"Uses light to attract nocturnal insects, appealing to certain insect groups."
+BOLD:CV:SMPRC22	Sampling_protocol	Petite Ponar	"A sampling device used to collect benthic sediments in aquatic environments, primarily for collecting benthic invertebrates and sediment samples."
+BOLD:CV:SMPRC23	Sampling_protocol	Sifting	"Involves sifting soil, leaf litter, or detritus to collect small arthropods and other invertebrates, often with a fine mesh or sieve."
+BOLD:CV:SMPRC24	Sampling_protocol	Free hand collection	"Collection by hand without specific tools, often for easily accessible organisms."
+BOLD:CV:SMPRC25	Sampling_protocol	Schindler-Patalas sampler	"A water sampling device used to collect samples from specific depths in lakes, valuable for studying aquatic biodiversity and collecting plankton."
+BOLD:CV:SMPRC26	Sampling_protocol	SLAM trap (4-headed)	"An interception trap with four collection heads, designed to capture flying insects from multiple directions."
+BOLD:CV:SMPRC27	Sampling_protocol	SLAM trap (single-headed)	"A simplified SLAM trap with one collection head, used to intercept flying insects by blocking their flight path."
 BOLD:CV:SMPRC28	Sampling_protocol	AIS2	An Aquatic Invertebrate Sampler used in freshwater ecosystems to collect aquatic invertebrates.
-BOLD:CV:SMPRC29	Sampling_protocol	Black light trap	Uses black light (UV) to attract and capture nocturnal insects, effective for moths and other UV-sensitive species.
-BOLD:CV:SMPRC30	Sampling_protocol	CO2 trap	Uses carbon dioxide to attract mosquitoes and other insects drawn to CO2, often combined with a fan or light to increase capture rates.
+BOLD:CV:SMPRC29	Sampling_protocol	Black light trap	"Uses black light (UV) to attract and capture nocturnal insects, effective for moths and other UV-sensitive species."
+BOLD:CV:SMPRC30	Sampling_protocol	CO2 trap	"Uses carbon dioxide to attract mosquitoes and other insects drawn to CO2, often combined with a fan or light to increase capture rates."
 BOLD:CV:SMPRC31	Sampling_protocol	Electroshock	Uses electric currents in aquatic habitats to temporarily stun fish and other aquatic organisms for collection.
-BOLD:CV:SMPRC32	Sampling_protocol	Larval collection	Specifically targets larval stages of insects, often using methods like leaf sampling or soil extraction.
-BOLD:CV:SMPRC33	Sampling_protocol	Sherman LF	A live trap designed for capturing small mammals, known for its humane trapping mechanism, allowing for live release.
-BOLD:CV:SMPRC34	Sampling_protocol	Sherman XLK	An extended-size Sherman trap, used for capturing larger small mammals.
+BOLD:CV:SMPRC32	Sampling_protocol	Larval collection	"Specifically targets larval stages of insects, often using methods like leaf sampling or soil extraction."
+BOLD:CV:SMPRC33	Sampling_protocol	Sherman LF	"A live trap designed for capturing small mammals, known for its humane trapping mechanism, allowing for live release."
+BOLD:CV:SMPRC34	Sampling_protocol	Sherman XLK	"An extended-size Sherman trap, used for capturing larger small mammals."
 BOLD:CV:SMPRC35	Sampling_protocol	Mixed	Combination of collection methods where detailed metadata was not maintained or samples were pooled after collection.
 BOLD:CV:SMPRC36	Sampling_protocol	Unavailable	Where the sampling protocol is lost or unavailable.
-BOLD:CV:SMPRC37	Sampling_protocol	Bait trap	Utilizes bait to attract specific organisms, such as carnivorous or herbivorous insects, into a collection container.
-BOLD:CV:SMPRC38	Sampling_protocol	Beating sheet	A cloth or sheet placed under vegetation, onto which insects are dislodged by beating branches, capturing canopy-dwelling arthropods.
-BOLD:CV:SMPRC39	Sampling_protocol	Vacuum	Uses suction to collect small invertebrates from vegetation or soil, commonly used for agricultural pest studies and ecological surveys.
+BOLD:CV:SMPRC37	Sampling_protocol	Bait trap	"Utilizes bait to attract specific organisms, such as carnivorous or herbivorous insects, into a collection container."
+BOLD:CV:SMPRC38	Sampling_protocol	Beating sheet	"A cloth or sheet placed under vegetation, onto which insects are dislodged by beating branches, capturing canopy-dwelling arthropods."
+BOLD:CV:SMPRC39	Sampling_protocol	Vacuum	"Uses suction to collect small invertebrates from vegetation or soil, commonly used for agricultural pest studies and ecological surveys."
 BOLD:CV:SMPRC40	Sampling_protocol	Vane trap	Intercepts flying insects with vertical panels that direct them into a collection chamber.
-BOLD:CV:SMPRC41	Sampling_protocol	Pheromone trap	Uses species-specific pheromones to attract target insects, like moths or beetles, into a collection device, ideal for monitoring pest species.
-BOLD:CV:SMPRC42	Sampling_protocol	Sticky trap	A passive sampling method that uses a sticky surface to capture insects as they land, effective for small, flying insects like aphids, whiteflies, and thrips.
-BOLD:CV:SMPRC43	Sampling_protocol	Lindgren funnel	A multi-funnel trap designed to intercept and capture flying insects, especially bark beetles and other forest pests, guiding insects down through a series of funnels into a collection container.
+BOLD:CV:SMPRC41	Sampling_protocol	Pheromone trap	"Uses species-specific pheromones to attract target insects, like moths or beetles, into a collection device, ideal for monitoring pest species."
+BOLD:CV:SMPRC42	Sampling_protocol	Sticky trap	"A passive sampling method that uses a sticky surface to capture insects as they land, effective for small, flying insects like aphids, whiteflies, and thrips."
+BOLD:CV:SMPRC43	Sampling_protocol	Lindgren funnel	"A multi-funnel trap designed to intercept and capture flying insects, especially bark beetles and other forest pests, guiding insects down through a series of funnels into a collection container."
 BOWP:CV:COI1	confidence_of_identification	high	A level of taxonomic certainty indicating that identification is strongly supported. There is a high probability that the expert species-level identification is correct.  
 BOWP:CV:COI2	confidence_of_identification	medium	A level of taxonomic certainty indicating moderate confidence based on available specimen data (e.g. poor images/ uncertain taxonomy). There is a high probability that the genus-level identification is correct but a lower likelihood that the species-level identification is correct.  
 BOWP:CV:COI3	confidence_of_identification	low	A level of taxonomic certainty indicating limited confidence due to weak or ambiguous evidence.
@@ -63,42 +63,43 @@ BOWP:CV:COI4	confidence_of_identification	unverified 	No reliable taxonomic iden
 BOWP:CV:MOD1	method_of_delivery	post-collection	Sample custody transferred to another person for physical delivery to repository.
 BOWP:CV:MOD2	method_of_delivery	courier	Sample is delivered to the repository through a professional courier or logistics service
 BOWP:CV:MOD3	method_of_delivery	hand-delivered	Sample is physically delivered in person
-BOWP:CV:RG1	reference_grade	platinum	A CoC reference voucher sample collected as a duplicate additional sample for future police forensic laboratory use
-BOWP:CV:RG2	reference_grade	gold	A CoC reference voucher sample analysed for the BOLD database that has been expertly identified
-BOWP:CV:RG3	reference_grade	silver	A non-CoC reference DNA voucher sample analysed for the BOLD  species reference database. This sample has been expertly identified or has an associated diagnostic image that is available for expert ID.
-BOWP:CV:RG4	reference_grade	bronze	A non-CoC reference DNA barcode sequence of a specimen that has been published on BOLD or GenBank 
-BOWP:CV:SBC1	sealed_bag_contents	biological-sample	A representative biological part or a single item from a specimen of an organism. This may include blood, muscle, hair, fin, leg, leaf or bark (referred to as a preparation on some collection databases)
+BOWP:CV:RG1	reference_grade	Tier A+	Same as Tier A + expert identification
+BOWP:CV:RG2	reference_grade	Tier A	A CoC reference voucher sample analysed for the BOLD database that has been expertly identified
+BOWP:CV:RG3	reference_grade	Tier B+	Same as Tier B + expert identification
+BOWP:CV:RG4	reference_grade	Tier B	A non-CoC reference DNA voucher sample analysed for the BOLD  species reference database. This sample has been  identified or has an associated diagnostic image that is available for expert ID.
+BOWP:CV:RG5	reference_grade	Tier C	A non-CoC reference DNA barcode sequence of a specimen that has been published on BOLD or GenBank 
+BOWP:CV:SBC1	sealed_bag_contents	biological-sample	"A representative biological part or a single item from a specimen of an organism. This may include blood, muscle, hair, fin, leg, leaf or bark (referred to as a preparation on some collection databases)"
 BOWP:CV:SBC2	sealed_bag_contents	compact-disc	A molded plastic disc known as a digital optical disc data storage format used to data such as images. Only non-rewritable CD's will be stored.
 BOWP:CV:SBC3	sealed_bag_contents	sd-card	A Secure Digital Card is a type of removable device used to store digital data (images from camera).
-BOWP:CV:SBC4	sealed_bag_contents	forensic-bag	A tamper-evident evidence sealing bag used to securely store collected items while protecting them from tampering, contamination, or damage
+BOWP:CV:SBC4	sealed_bag_contents	forensic-bag	"A tamper-evident evidence sealing bag used to securely store collected items while protecting them from tampering, contamination, or damage"
 BOWP:CV:STT1	specimen_tag_type	microchip	This is a tiny electronic chip used as an identifying integrated circuit (tag) that is implanted under the skin of an animal or bark of plant. The microchip has a unique ID number that is transmitted via Radio Frequency Identification (RFID) microchips when scanned. 
 BOWP:CV:STT2	specimen_tag_type	ring	A light weight uniquely numbered metal ring (or band) that is used to identify an individual animal (e.g. bird rings)
-BOWP:CV:STT3	specimen_tag_type	physical-tag	Visual marker that  can be a plastic or metal object used as an identification device to identify individual animals or plants. Tags can display a number, code, or other information such as ownership
-BOWP:CV:STT4	specimen_tag_type	notch	A cut of a small notch in the ear, often to indicate the animal's age or herd. a small skin clipping made on the ear of a mammal as an individual identifier
+BOWP:CV:STT3	specimen_tag_type	physical-tag	"Visual marker that  can be a plastic or metal object used as an identification device to identify individual animals or plants. Tags can display a number, code, or other information such as ownership"
+BOWP:CV:STT4	specimen_tag_type	notch	"A cut of a small notch in the ear, often to indicate the animal's age or herd. a small skin clipping made on the ear of a mammal as an individual identifier"
 BOWP:CV:STT5	specimen_tag_type	branding	A permanent method of physical marking (tattooing) animals or plants
-BOWP:CAOS:IT1	image_type	diagnostic	Images of the  specific physical traits or features that define and differentiate a taxonomic group (or taxon) from other similar groups. May include general body shape, appendages, leaf shape, flowers  or other visible structures
+BOWP:CAOS:IT1	image_type	diagnostic	"Images of the  specific physical traits or features that define and differentiate a taxonomic group (or taxon) from other similar groups. May include general body shape, appendages, leaf shape, flowers  or other visible structures"
 BOWP:CAOS:IT2	image_type	sampling	Images of the sampling process (start to end) of collecting a representative sample that is stored in a forensic bag from a specimen.
 BOWP:CAOS:IT3	image_type	bag-opening	Images of the process of opening sealed forensic bags to access a representative species reference sample
 BOWP:CAOS:IT4	image_type	collection-site	Field observation images of the location/site where a sampling event occurred
 BOWP:CAOS:IT5	image_type	resealing	Images of the process of resealing  (or closing) a representative reference sample into a new forenisc bag after access
-BOWP:CAOS:DC1	document_category	permit	Formal written authorization or license, that grants permission or legal rights to conduct restricted activities with samples or organisms or access to an area
-BOWP:CAOS:DC2	document_category	statement	A written formal declaration that presents facts, actions or processes in a clear, deliberate and report.
-BOWP:CAOS:DC3	document_category	biobanking-process	The systematic process that includes the delivery, accessioning, processing, cataloguing, receiving and retrieval is documents and storage of biological samples and their associated collection metadata.
+BOWP:CAOS:DC1	document_category	permit	"Formal written authorization or license, that grants permission or legal rights to conduct restricted activities with samples or organisms or access to an area"
+BOWP:CAOS:DC2	document_category	statement	"A written formal declaration that presents facts, actions or processes in a clear, deliberate and report."
+BOWP:CAOS:DC3	document_category	biobanking-process	"The systematic process that includes the delivery, accessioning, processing, cataloguing, receiving and retrieval is documents and storage of biological samples and their associated collection metadata."
 BOWP:CAOS:DC4	document_category	lab-worksheets	Templates for specific molecular laboratory procedures or activities that document the steps of the scientific method (observations and data). 
 BOWP:CAOS:DC5	document_category	coc-sampling	A legal and administrative step-by-step process that tracks the process (start to end) of collecting a representative reference sample that is sealed inside a forensic bag ensuring sample and data integrity.
 BOWP:CAOS:DOC1	document	field-datasheet	A document used to systematically record information collected during fieldwork that pertains to activities in the field
 BOWP:CAOS:DOC2	document	sample-handover	handover of forensic bags between two people prior delivery to a repository sample/subsample/datasheet/photograph as per a request action
 BOWP:CAOS:DOC3	document	biobank-accession	An alphanumeric unique number allocated to a batch of samples (1 - ∞) arriving at the repository as a single deposit
 BOWP:CAOS:DOC4	document	biobank-retrieval	Retrieving a sample/subsample/datasheet/photograph as per a request action
-BOWP:CAOS:DOC5	document	sample-handling statement	A written formal declaration that presents a clear, deliberate and report of CoC sampling
+BOWP:CAOS:DOC5	document	sample-handling statement	"A written formal declaration that presents a clear, deliberate and report of CoC sampling"
 BOWP:CAOS:DOC6	document	lab-extraction	Template for the DNA extraction procedure that documents the sample details and the method as defined by the user (observations and data). 
-BOWP:CAOS:DOC7	document	lab-pcr	Template for the  PCR amplification procedure that documents the reagents used, thermal cycler protocol and sample details as defined by the user
+BOWP:CAOS:DOC7	document	lab-pcr	"Template for the  PCR amplification procedure that documents the reagents used, thermal cycler protocol and sample details as defined by the user"
 BOWP:CAOS:DOC8	document	lab-gel	Template for the gel electrophoresis procedure that documents the visualization of PCR products after amplification (observations and data). 
-BOWP:CAOS:DOC9	document	lab-pcr-cleanup	Template for the the PCR clean-up procedure that documents the reagents used, protocol and PCR product details as defined by the user
-BOWP:CAOS:DOC10	document	lab-cycle-sequencing	Template for the the cycle sequencing procedure that documents the reagents used, thermal cycler protocol and sample details as defined by the user
-BOWP:CAOS:DOC11	document	lab-sequencing-cleanup	Template for the  cycle-sequencing clean-up procedure that documents the reagents used, protocol and PCR product sample details as defined by the user
+BOWP:CAOS:DOC9	document	lab-pcr-cleanup	"Template for the the PCR clean-up procedure that documents the reagents used, protocol and PCR product details as defined by the user"
+BOWP:CAOS:DOC10	document	lab-cycle-sequencing	"Template for the the cycle sequencing procedure that documents the reagents used, thermal cycler protocol and sample details as defined by the user"
+BOWP:CAOS:DOC11	document	lab-sequencing-cleanup	"Template for the  cycle-sequencing clean-up procedure that documents the reagents used, protocol and PCR product sample details as defined by the user"
 BOWP:CAOS:DOC12	document	lab-sequencing	Template for the Genetic analyzer sequencing protocol and sample details (as defined by the user)
-BOWP:CAOS:DOC13	document	lab-sequence-assembly	Template that documents the protocol used to align and merge DNA sequence fragments into consensus reads to reconstruct the original, complete DNA sequence of a barcode region
-BOWP:CAOS:DOC14	document	lab-result-statement	A lab analyst written formal declaration that presents a clear, deliberate and report of DNA barcoding analysis
-BOWP:CAOS:DOC15	document	taxonomic-id-statement	A written formal declaration that presents a clear, deliberate and report of morphological identification of a reference specimen voucher
-BOWP:CAOS:DOC16	document	lab-administrative-review-statement	A written formal declaration that presents a clear, deliberate and report of the verified final identification of a reference specimen voucher
+BOWP:CAOS:DOC13	document	lab-sequence-assembly	"Template that documents the protocol used to align and merge DNA sequence fragments into consensus reads to reconstruct the original, complete DNA sequence of a barcode region"
+BOWP:CAOS:DOC14	document	lab-result-statement	"A lab analyst written formal declaration that presents a clear, deliberate and report of DNA barcoding analysis"
+BOWP:CAOS:DOC15	document	taxonomic-id-statement	"A written formal declaration that presents a clear, deliberate and report of morphological identification of a reference specimen voucher"
+BOWP:CAOS:DOC16	document	lab-administrative-review-statement	"A written formal declaration that presents a clear, deliberate and report of the verified final identification of a reference specimen voucher"

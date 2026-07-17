@@ -1,6 +1,6 @@
 field	data_type	data_format	bold:field_group	definition
 processid	string	default	specimen	BOLD System generated unique identifier for the sample being sequenced.
-sampleid	string	default	specimen	User generated identifier for the sample being sequenced, often identical to the Field ID or Museum ID.
+sampleid	string	default	specimen	"User generated identifier for the sample being sequenced, often identical to the Field ID or Museum ID."
 fieldid	string	default	specimen	Specimen or sample identifier generated in the field or lot number for a bulk collection event.
 museumid	string	default	specimen	Catalog number from a museum collection.
 record_id	string	default	specimen	A BOLD generated identifier for the marker and specimen sequence combination.
@@ -28,27 +28,27 @@ identification_rank	string	default	taxonomy	Taxonomic rank of the identification
 identified_by	string	default	taxonomy	Full name of primary individual responsible for providing the taxonomic identification of the specimen.
 identifier_email	string	%s@%s.%s	taxonomy	Identifier email address.
 taxonomy_notes	string	default	taxonomy	General notes regarding the taxonomy of the specimen.
-sex	string	default	specimen	The sex of the specimen registered in the record. This field uses a controlled vocabulary: 'Male', 'Female', 'Hermaphrodite'.
-reproduction	string	default	specimen	The reproductive strategy of the specimen. This field uses a controlled vocabulary: 'Sexual', 'Asexual', 'Cyclic Parthenogen'.
-life_stage	string	default	specimen	The age class or life stage of the specimen(s) at the time of sampling. Contolled vocabulary: 'Adult', 'Immature', 'Juvenile', 'Pupa'.
+sex	string	default	specimen	"The sex of the specimen registered in the record. This field uses a controlled vocabulary: 'Male', 'Female', 'Hermaphrodite'."
+reproduction	string	default	specimen	"The reproductive strategy of the specimen. This field uses a controlled vocabulary: 'Sexual', 'Asexual', 'Cyclic Parthenogen'."
+life_stage	string	default	specimen	"The age class or life stage of the specimen(s) at the time of sampling. Contolled vocabulary: 'Adult', 'Immature', 'Juvenile', 'Pupa'."
 short_note	string	default	specimen	A brief note or term associated with the specimen to add context to the record.
 notes	string	default	specimen	Detailed notes regarding the specimen.
-voucher_type	string	default	collection	Status of the specimen in an accessioning process.This field uses a controlled vocabulary: 'Museum Vouchered:Type', 'Museum Vouchered:Type Series', 'Vouchered:Registered Collection', 'To Be Vouchered:Holdup/Private', 'E-Vouchered:DNA/Tissue+Photo', 'Dna/Tissue Vouchered Only', 'No Specimen'.  For type series, use of GBIF's typeStatus vocabulary(https://rs.gbif.org/vocabulary/gbif/type_status.xml) is required.
-tissue_type	string	default	collection	A physical result of a sampling (or subsampling) event. In biological collections, the material sample is typically collected, and either preserved or destructively processed.
+voucher_type	string	default	collection	"Status of the specimen in an accessioning process.This field uses a controlled vocabulary: 'Museum Vouchered:Type', 'Museum Vouchered:Type Series', 'Vouchered:Registered Collection', 'To Be Vouchered:Holdup/Private', 'E-Vouchered:DNA/Tissue+Photo', 'Dna/Tissue Vouchered Only', 'No Specimen'.  For type series, use of GBIF's typeStatus vocabulary(https://rs.gbif.org/vocabulary/gbif/type_status.xml) is required."
+tissue_type	string	default	collection	"A physical result of a sampling (or subsampling) event. In biological collections, the material sample is typically collected, and either preserved or destructively processed."
 specimen_linkout	string	default	specimen	Link to an external resource for the specimen record.
-associated_specimens	string	default	specimen	A list (concatenated and comma separated) of other specimens associated with the subject specimen at the time of its collection. References to other specimen identifiers should be preceded by the relationship. Examples: 'host: PLANT23452, prey: USNM45677' when both prey and host specimens have been captured.
-associated_taxa	string	default	specimen	A list (concatenated and comma separated) of taxa associated with the specimen at the time of its collection. References to taxa should be preceded by the relationship. Use of this field implies knowledge of an associated specimen where the identification is an inference. Examples: [host: Quercus alba], [prey: caterpillar].
+associated_specimens	string	default	specimen	"A list (concatenated and comma separated) of other specimens associated with the subject specimen at the time of its collection. References to other specimen identifiers should be preceded by the relationship. Examples: 'host: PLANT23452, prey: USNM45677' when both prey and host specimens have been captured."
+associated_taxa	string	default	specimen	"A list (concatenated and comma separated) of taxa associated with the specimen at the time of its collection. References to taxa should be preceded by the relationship. Use of this field implies knowledge of an associated specimen where the identification is an inference. Examples: [host: Quercus alba], [prey: caterpillar]."
 collectors	string	default	collection	Comma separated list of full or abbreviated names of the individuals or teams responsible for collecting the sample in the field.
 collection_date_start	string:date	%Y-%m-%d	collection	The start date for the associated collecting event.
 collection_date_end	string:date	%Y-%m-%d	collection	The end date for the associated collecting event. 
 collection_event_id	string	default	collection	An identifier for the set of information associated with an Event (something that occurs at a place and time). May be a global unique identifier or an identifier specific to the data set.
 collection_time	string	default	collection	The time or time of day during which the sample was collected.
 collection_notes	string	default	collection	Comments or notes about the collection event.
-geoid	integer	default	collection	Unique identifier assigned to the most detailed or specific geographic division available, either country/ocean or province/state.
-country/ocean	string	default	collection	The full, unabbreviated name of the country, major political unit, or ocean.
+geoid	integer	default	collection	"Unique identifier assigned to the most detailed or specific geographic division available, either country/ocean or province/state."
+country/ocean	string	default	collection	"The full, unabbreviated name of the country, major political unit, or ocean."
 country_iso	string	default	collection	Country ISO 3166-1 Alpha-2 code.
-province/state	string	default	collection	The full, unabbreviated name of the state, province, territory, or prefecture within the given country.
-region	string	default	collection	Park, county, district, lake or river.
+province/state	string	default	collection	"The full, unabbreviated name of the state, province, territory, or prefecture within the given country."
+region	string	default	collection	"Park, county, district, lake or river."
 sector	string	default	collection	Sector of park or county/city.
 site	string	default	collection	The name of the sampling location.
 site_code	string	default	collection	A short string representing the sampling location.
@@ -60,14 +60,14 @@ elev_accuracy	float	default	collection	Accuracy of the elevation value in meters
 depth	float	default	collection	For organisms collected beneath the surface of a water body. Measured in meters below the surface of water.
 depth_accuracy	float	default	collection	The accuracy of the depth value in meters.
 habitat	string	default	collection	A category or description of the habitat.
-sampling_protocol	string	default	specimen	The names of, references to, or descriptions of the methods or protocols used to capture the associated specimen.
+sampling_protocol	string	default	specimen	"The names of, references to, or descriptions of the methods or protocols used to capture the associated specimen."
 nuc	string	default	sequence	Nucleotide sequence as submitted.
 nuc_basecount	integer	default	sequence	Count of IUPAC non-degenerate nucleotide symbols. 
-insdc_acs	string	default	sequence	Accession number assigned to a sequence upon its deposition in one of the databases affiliated with the International Nucleotide Sequence Database Collaboration, 'www.insdc.org'.
-funding_src	string	default	sequence	Source of funding for data generation, curation, and publication.
+insdc_acs	string	default	sequence	"Accession number assigned to a sequence upon its deposition in one of the databases affiliated with the International Nucleotide Sequence Database Collaboration, 'www.insdc.org'."
+funding_src	string	default	sequence	"Source of funding for data generation, curation, and publication."
 marker_code	string	default	sequence	Short code associated with the sequenced marker(gene).
-primers_forward	array	default	sequence	A comma separated list of forward primer code and sequence pairs, with each code and sequence separated by a colon.
-primers_reverse	array	default	sequence	A comma separated list of reverse primer code and sequence pairs, with each code and sequence separated by a colon.
+primers_forward	array	default	sequence	"A comma separated list of forward primer code and sequence pairs, with each code and sequence separated by a colon."
+primers_reverse	array	default	sequence	"A comma separated list of reverse primer code and sequence pairs, with each code and sequence separated by a colon."
 sequence_run_site	string	default	sequence	Full name of the institution where sequencing was performed or the database the sequence was retrieved from.
 sequence_upload_date	string:date	%Y-%m-%d	sequence	Date the sequence was uploaded.
 bold_recordset_code_arr	array	default	record organization	A comma separated list of Projects and Datasets on BOLD that this record is associated with.
@@ -85,7 +85,7 @@ collector_affiliation	string	default	forensic extension	Institutional affiliatio
 collector_email	string	%s@%s.%s	forensic extension	Email address of the primary/COC collector
 collector_id	string	default	forensic extension	Personal identification for the primary/COC collector
 collector_phone	string	default	forensic extension	Personal phone number for the primary/COC collector
-method_of_delivery	string	default	forensic extension - advanced	Mode of sample transporation from collection site to respository.  Controlled vocabulary (couriers, hand-delivered)
+method_of_delivery	string	default	forensic extension - advanced	"Mode of sample transporation from collection site to respository.  Controlled vocabulary (couriers, hand-delivered)"
 reference_grade	string	default	forensic extension	Grading of the record for completion and compliance.  Controlled vocabulary (A.Platinum/B.Gold/C.Silver/D.Bronze)
 sealed_bag_contents	array	default	forensic extension	Type of material or device in a given sealed bag. Controlled vocabulary (CD/SD-CARD/biomaterial/evidence-bag)
 sealed_bag_ids	array	default	forensic extension	Id of sealed bag corresponding with sealed_bag_contents
@@ -111,5 +111,3 @@ genetic_fingerprint_count	integer	default	feature rollup	Count of microsatellite
 stopcodon_present	boolean	default	feature rollup	True if the marker is protien coding and the translation includes a stop codon
 compliance_level	string	default	feature rollup	Compliance level of the record
 features_updated	string:date	%Y-%m-%d	feature rollup	Date when the feature rollup was last updated
-
-
