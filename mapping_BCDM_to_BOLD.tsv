@@ -24,6 +24,7 @@ nuc	seqdata.nucraw	character varying(10000)
 sequence_upload_date	seqdata.updated	timestamp without time zone				
 processid	seqentry.processid	character varying(15) 				
 inst	specimen.fk_inst	integer 	inst.name		lookup:inst.id	character varying (300)
+sovereign_inst	specimen.fk_sovereign_inst	integer 	inst.name		lookup:inst.id	character varying (300)
 museumid	specimen.catalognumber	character varying(68) 				
 collection_code	specimen.collectioncode	character varying(35) 				
 processid_minted_date	specimen.created	timestamp without time zone				

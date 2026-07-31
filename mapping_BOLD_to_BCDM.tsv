@@ -27,6 +27,7 @@ seqdata.updated	sequence_upload_date
 seqentry.processid	processid
 seqentry.processid.marker.code	record_id
 specimen__fk_inst.inst.name	inst
+specimen__fk_sovereign_inst.inst.name	sovereign_inst
 specimen.catalognumber	museumid
 specimen.collectioncode	collection_code
 specimen.created	processid_minted_date
